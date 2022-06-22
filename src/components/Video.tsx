@@ -4,9 +4,10 @@ export default function Video() {
     return (
         <div className="flex-1">
             <iframe width="1019" height="573" src="https://www.youtube.com/embed/cUT665tW4v8" title="Ignite Lab | Aula 2 •  Estrutura visual do projeto" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
             <div className="m-8">
 
-                <div className="flex">
+                <div className="flex gap-6">
 
                     <div>
                         <h1 className="font-semibold text-2xl mb-4">Aula 01 - Criando o projeto e realizando o setup inicial</h1>
