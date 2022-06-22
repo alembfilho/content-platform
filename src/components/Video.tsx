@@ -63,20 +63,23 @@ export default function Video() {
                     </div>
 
                     <div className="text-sm font-semibold">
-                        <button className="w-[237px] h-[56px] bg-green-900 rounded uppercase mb-4 flex justify-center items-center gap-2">
+                        <a href='' className="w-[237px] h-[56px] bg-green-900 rounded uppercase mb-4 flex justify-center items-center gap-2
+                        hover:bg-green-700">
                             <DiscordLogo size={20} />
-                            Comunidade no discord</button>
-                        <button className="w-[237px] h-[56px] border-green-200 border rounded uppercase text-green-200 flex justify-center items-center gap-2">
+                            Comunidade no discord</a>
+                        <a href='' className="w-[237px] h-[56px] border-green-200 border rounded uppercase text-green-200 flex justify-center items-center gap-2
+                        hover:bg-green-200 hover:text-zinc-700">
                             <Lightning size={20} />
                             Acesse o desafio
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <div className="flex items-center my-20 gap-6">
 
                     <a href=""
-                        className="flex h-[135px]  bg-zinc-800 rounded items-center"
+                        className="flex h-[135px]  bg-zinc-800 rounded items-center
+                        hover:bg-zinc-700"
                     >
                         <aside className="bg-green-900 w-24 rounded-l flex justify-center items-center h-full">
                             <FileArrowDown size={35} />
@@ -90,7 +93,8 @@ export default function Video() {
                     </a>
 
                     <a href=""
-                        className="flex h-[135px]  bg-zinc-800 rounded items-center"
+                        className="flex h-[135px]  bg-zinc-800 rounded items-center
+                        hover:bg-zinc-700"
                     >
                         <aside className="bg-green-900 w-24 rounded-l flex justify-center items-center h-full">
                             <Image size={35} />

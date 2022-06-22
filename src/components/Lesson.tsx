@@ -17,7 +17,7 @@ export default function Lesson({ data: lesson }: { data: LessonInterface }) {
     return (
         <a href="">
             <span className="text-zinc-400">{format(availableAt, "EEEE' • 'd' de 'MMMM' • 'H'h'mm", { locale: ptBR })}</span>
-            <div className="border rounded border-zinc-600 p-4 mt-2">
+            <div className="border rounded border-zinc-600 p-4 mt-2 hover:border-green-400">
                 <div className="flex justify-between mb-4">
                     {isAvailable ?
                         (<span className="flex items-center gap-2 text-green-300 text-sm">
