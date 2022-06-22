@@ -1,25 +1,63 @@
 import { DiscordLogo, Lightning, Image, FileArrowDown, CaretRight } from 'phosphor-react'
+import { gql, useQuery } from "@apollo/client"
+
+
+const GET_LESSON = gql`
+    query {
+        lesson(where:{slug:"ignite-lab-or-aula-1-o-inicio-da-especializacao-em-reactjs"}) {
+            id
+            title
+            description
+            videoId
+            teacher {
+                avatarURL
+                bio
+                name
+            }
+        }
+    }
+`
+interface GetLessonsResponse {
+    lesson: VideoInterface
+}
+
+interface VideoInterface {
+    id: string;
+    title: string;
+    description: string;
+    videoId: string;
+    teacher: {
+        avatarURL: string;
+        bio: string;
+        name: string;
+    }
+}
+
+
 
 export default function Video() {
+    const { data } = useQuery<GetLessonsResponse>(GET_LESSON)
+    console.log(data)
+    const lesson = data?.lesson
     return (
         <div className="flex-1">
-            <iframe width="1019" height="573" src="https://www.youtube.com/embed/cUT665tW4v8" title="Ignite Lab | Aula 2 •  Estrutura visual do projeto" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe width="1019" height="573" src={"https://www.youtube.com/embed/" + lesson?.videoId} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
             <div className="m-8">
 
                 <div className="flex gap-6">
 
                     <div>
-                        <h1 className="font-semibold text-2xl mb-4">Aula 01 - Criando o projeto e realizando o setup inicial</h1>
-                        <p className="text-zinc-200">Nessa aula vamos dar início ao projeto criando a estrutura base da aplicação utilizando ReactJS, Vite e TailwindCSS. Vamos também realizar o setup do nosso projeto no GraphCMS criando as entidades da aplicação e integrando a API GraphQL gerada pela plataforma no nosso front-end utilizando Apollo Client.</p>
+                        <h1 className="font-semibold text-2xl mb-4">{lesson?.title}</h1>
+                        <p className="text-zinc-200">{lesson?.description}</p>
 
                         <div className="flex gap-4 items-center mt-6">
-                            <img src="https://github.com/alembfilho.png" alt="avatar"
+                            <img src={lesson?.teacher.avatarURL} alt="avatar"
                                 className="w-16 h-16 rounded-full border-green-200 border-2" />
 
                             <div>
-                                <h1 className="font-semibold text-xl">Alessandro Melgaço</h1>
-                                <span className="text-sm text-zinc-400">Fullstack developer</span>
+                                <h1 className="font-semibold text-xl">{lesson?.teacher.name}</h1>
+                                <span className="text-sm text-zinc-400">{lesson?.teacher.bio}</span>
                             </div>
                         </div>
                     </div>
@@ -68,7 +106,7 @@ export default function Video() {
                 </div>
 
                 <footer className="border-t-zinc-600 border-t pt-6 text-zinc-400 text-sm">
-                    Rocketseat
+                    DROMEL
                     - Todos os direitos reservados
                     <a href="" className="float-right">Políticas de privacidade</a>
                 </footer>
