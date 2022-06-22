@@ -1,25 +1,7 @@
-import { gql, useQuery } from "@apollo/client"
 import Sidebar from "./components/Sidebar"
 import Video from "./components/Video"
 
-// const GET_LESSONS = gql`
-//   query{
-//     lessons{
-//       id
-//       title
-//     }
-//   }
-// `
-// interface Lesson {
-//   id: string;
-//   title: string;
-// }
-
-// const { data } = useQuery(GET_LESSONS)
-// console.log(data)
-
 function App() {
-
 
   return (<>
     <header className="flex w100 items-center justify-center h-[72px] gap-2 bg-zinc-800 border-b-zinc-600 border-b-[1px]">

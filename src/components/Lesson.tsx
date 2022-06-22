@@ -1,8 +1,16 @@
 import { CheckCircle } from "phosphor-react";
 
-export default function Class() {
+export interface LessonInterface {
+    id: string;
+    title: string;
+    lessonType: 'live' | 'class';
+    availableAt: string;
+    slug: string;
+}
+
+export default function Lesson({ data: lesson }: { data: LessonInterface }) {
     return (
-        <div>
+        <a href="">
             <span className="text-zinc-400">Domingo • 20 de junho • 19h00</span>
             <div className="border rounded border-zinc-600 p-4 mt-2">
                 <div className="flex justify-between mb-4">
@@ -13,8 +21,8 @@ export default function Class() {
                     <span className="text-green-500 text-xs font-semibold border border-green-500 rounded px-1">AO VIVO</span>
                 </div>
 
-                <strong>Abertura do evento Ignite labs</strong>
+                <strong>{lesson.title}</strong>
             </div>
-        </div>
+        </a>
     )
 }
