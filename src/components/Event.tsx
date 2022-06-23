@@ -13,7 +13,7 @@ export default function Event() {
             </header>
             <main className="flex">
                 <Video slug={slug} />
-                <Sidebar slug={slug} />
+                {/* <Sidebar slug={slug} /> */}
             </main>
 
         </>

@@ -46,7 +46,7 @@ export default function Video({ slug }: { slug?: string }) {
 
             <div className="m-8">
 
-                <div className="flex gap-6">
+                <div className="flex gap-6 flex-col md:flex-row">
 
                     <div>
                         <h1 className="font-semibold text-2xl mb-4">{lesson?.title}</h1>
@@ -63,12 +63,12 @@ export default function Video({ slug }: { slug?: string }) {
                         </div>
                     </div>
 
-                    <div className="text-sm font-semibold">
-                        <a href='' className="w-[237px] h-[56px] bg-green-900 rounded uppercase mb-4 flex justify-center items-center gap-2
+                    <div className="text-sm font-semibold md:min-w-[237px]">
+                        <a href='' className="w-full h-[56px] bg-green-900 rounded uppercase mb-4 flex justify-center items-center gap-2
                         hover:bg-green-700 transition-colors">
                             <DiscordLogo size={20} />
                             Comunidade no discord</a>
-                        <a href='' className="w-[237px] h-[56px] border-green-200 border rounded uppercase text-green-200 flex justify-center items-center gap-2
+                        <a href='' className="w-full h-[56px] border-green-200 border rounded uppercase text-green-200 flex justify-center items-center gap-2
                         hover:bg-green-200 hover:text-zinc-700 transition-colors">
                             <Lightning size={20} />
                             Acesse o desafio
@@ -76,7 +76,7 @@ export default function Video({ slug }: { slug?: string }) {
                     </div>
                 </div>
 
-                <div className="flex items-center my-20 gap-6">
+                <div className="flex flex-col md:flex-row items-center my-20 gap-6">
 
                     <a href=""
                         className="group flex h-[135px]  bg-zinc-800 rounded items-center hover:bg-zinc-700 transition-colors"
@@ -109,9 +109,8 @@ export default function Video({ slug }: { slug?: string }) {
 
                 </div>
 
-                <footer className="border-t-zinc-600 border-t pt-6 text-zinc-400 text-sm">
-                    DROMEL
-                    - Todos os direitos reservados
+                <footer className="border-t-zinc-600 border-t pt-6 text-zinc-400 text-sm flex flex-col text-center gap-2 md:text-left md:flex-row md:justify-between">
+                    DROMEL - Todos os direitos reservados
                     <a href="" className="float-right">Políticas de privacidade</a>
                 </footer>
 
