@@ -12,11 +12,8 @@ export default function Event() {
                 <span className="mt-2 tracking-widest text-gray-200 ">REACTJS</span>
             </header>
             <main className="flex">
-                {slug
-                    ? <Video />
-                    : <div className="flex-1" />
-                }
-                <Sidebar />
+                <Video slug={slug} />
+                <Sidebar slug={slug} />
             </main>
 
         </>

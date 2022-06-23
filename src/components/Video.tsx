@@ -3,8 +3,8 @@ import { gql, useQuery } from "@apollo/client"
 
 
 const GET_LESSON = gql`
-    query {
-        lesson(where:{slug:"ignite-lab-or-aula-1-o-inicio-da-especializacao-em-reactjs"}) {
+    query Lesson($slug: String){
+        lesson(where:{slug:$slug}) {
             id
             title
             description
@@ -35,8 +35,9 @@ interface VideoInterface {
 
 
 
-export default function Video() {
-    const { data } = useQuery<GetLessonsResponse>(GET_LESSON)
+export default function Video({ slug }: { slug?: string }) {
+    const { data } = useQuery<GetLessonsResponse>(GET_LESSON, { variables: { slug: slug || "ignite-lab-or-aula-1-o-inicio-da-especializacao-em-reactjs" } }
+    )
     console.log(data)
     const lesson = data?.lesson
     return (
